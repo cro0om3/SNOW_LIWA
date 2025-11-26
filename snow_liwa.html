@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow LIWA - Snow Only</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: url('https://raw.githubusercontent.com/cro0om3/turbo-meme/main/Background.png') no-repeat center center fixed;
+            background-size: contain;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 99;
+            user-select: none;
+            pointer-events: none;
+            animation-name: fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 3px white);
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        .small {
+            font-size: 14px;
+        }
+
+        .medium {
+            font-size: 22px;
+        }
+
+        .large {
+            font-size: 32px;
+        }
+
+        .s1 {
+            left: 8%;
+            animation-duration: 7s;
+        }
+
+        .s2 {
+            left: 22%;
+            animation-duration: 9s;
+            animation-delay: 1.5s;
+        }
+
+        .s3 {
+            left: 37%;
+            animation-duration: 6s;
+            animation-delay: 3s;
+        }
+
+        .s4 {
+            left: 53%;
+            animation-duration: 10s;
+            animation-delay: 0.5s;
+        }
+
+        .s5 {
+            left: 68%;
+            animation-duration: 8s;
+            animation-delay: 2.2s;
+        }
+
+        .s6 {
+            left: 84%;
+            animation-duration: 11s;
+            animation-delay: 4s;
+        }
+
+        .cta-button {
+            position: fixed;
+            z-index: 150;
+            bottom: 40px;
+            right: 50%;
+            transform: translateX(50%);
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.45);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.45);
+            transform: translateX(50%) translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateX(50%) translateY(0);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+        }
+
+        @media (max-width: 600px) {
+            .cta-button {
+                bottom: 24px;
+                padding: 12px 22px;
+                font-size: 16px;
+            }
+        }
+
+        main {
+            position: relative;
+            z-index: 5;
+        }
+
+        .panel {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Infinite cute snowflakes falling -->
+    <div class="snowflake small s1">?</div>
+    <div class="snowflake medium s2">?</div>
+    <div class="snowflake small s3">?</div>
+    <div class="snowflake large s4">?</div>
+    <div class="snowflake medium s5">?</div>
+    <div class="snowflake large s6">?</div>
+
+    <main>
+        <section class="panel"></section>
+        <section class="panel"></section>
+        <section class="panel"></section>
+        <section class="panel"></section>
+    </main>
+
+    <a class="cta-button" href="winter.html" aria-label="الانتقال إلى صفحة الشتاء">اضغط هنا</a>
+</body>
+
+</html>

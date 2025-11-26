@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Liwa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+            min-height: 100vh;
+            background: #f5f2ec;
+            font-family: Arial, sans-serif;
+        }
+
+        .bg-img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            opacity: 0.95;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(110vh); }
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 0 16px 40px;
+            box-sizing: border-box;
+        }
+
+        .panel {
+            width: min(2582px, 100%);
+            min-height: auto;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .panel:not(.image-panel) {
+            min-height: 800px;
+        }
+
+        .panel-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 14px 28px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .panel-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .image-viewer {
+            position: relative;
+            width: min(2582px, 100%);
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #0d1b2a;
+        }
+
+        .zoom-controls {
+            position: sticky;
+            top: 12px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            padding: 8px;
+            z-index: 3;
+        }
+
+        .zoom-btn {
+            padding: 10px 14px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .zoom-btn:active {
+            transform: translateY(1px);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 12px 8px;
+            color: #cfe8ff;
+            text-align: center;
+        }
+
+        .hero-title {
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        .hero-button {
+            padding: 12px 28px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: linear-gradient(120deg, #1e88e5, #64b5f6);
+            color: #0b1118;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .hero-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .cta-overlay {
+            position: absolute;
+            left: 50%;
+            top: 63%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+        }
+
+        .cta-overlay .hero-button {
+            padding: 14px 30px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .panel-button {
+                left: 50%;
+                top: 16px;
+                transform: translateX(-50%);
+                width: min(240px, 90vw);
+                padding: 14px 24px;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .image-viewer {
+                width: 100%;
+            }
+
+            .cta-overlay {
+                top: 58%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="snow" id="snow"></div>
+
+    <main>
+        <section class="panel image-panel">
+            <div class="hero">
+                <h2 class="hero-title">WELCOME</h2>
+                <a class="hero-button" href="winter.html" aria-label="الانتقال إلى صفحة الشراء">Book / احجز</a>
+            </div>
+
+            <a href="winter.html" aria-label="الانتقال إلى صفحة الشراء" style="display:block; position:relative; text-decoration:none;">
+                <img src="ChatGPT Image Nov 24, 2025, 08_01_07 PM.png" alt="احجز | BOOK" class="bg-img">
+                <div class="cta-overlay">
+                    <a class="hero-button" href="winter.html" aria-label="الانتقال إلى صفحة الشراء">احجز الآن</a>
+                </div>
+            </a>
+
+            <div class="image-viewer">
+                <div class="zoom-controls">
+                    <button class="zoom-btn" data-zoom="in">+</button>
+                    <button class="zoom-btn" data-zoom="out">-</button>
+                    <button class="zoom-btn" data-zoom="reset">Reset</button>
+                </div>
+                <img id="poster" src="Background (1).png" class="bg-img" alt="Snow Liwa">
+            </div>
+            <button class="panel-button">Book</button>
+        </section>
+        <section class="panel"></section>
+        <section class="panel"></section>
+        <section class="panel"></section>
+    </main>
+
+    <script>
+        const snow = document.getElementById("snow");
+        const amount = 140;
+
+        for (let i = 0; i < amount; i++) {
+            const flake = document.createElement("div");
+            flake.classList.add("snowflake");
+
+            const size = Math.random() * 8 + 6; // 6px to 14px for better visibility
+            flake.style.width = size + "px";
+            flake.style.height = size + "px";
+
+            flake.style.left = Math.random() * 100 + "vw";
+            flake.style.animationDuration = Math.random() * 5 + 3 + "s"; // 3s to 8s
+            flake.style.animationDelay = Math.random() * 4 + "s";
+
+            snow.appendChild(flake);
+        }
+
+        // Simple zoom controls (adjusts image width for natural scrolling and zoom)
+        const poster = document.getElementById("poster");
+        let zoom = 1;
+        const minZoom = 0.5;
+        const maxZoom = 3;
+        const step = 0.2;
+
+        const applyZoom = () => {
+            poster.style.width = `${zoom * 100}%`;
+        };
+
+        document.querySelectorAll(".zoom-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const action = btn.dataset.zoom;
+                if (action === "in") {
+                    zoom = Math.min(maxZoom, zoom + step);
+                } else if (action === "out") {
+                    zoom = Math.max(minZoom, zoom - step);
+                } else {
+                    zoom = 1;
+                }
+                applyZoom();
+            });
+        });
+
+        applyZoom();
+    </script>
+</body>
+</html>
