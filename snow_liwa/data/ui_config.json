@@ -1,0 +1,73 @@
+{
+  "admin_pin": "1234",
+  "background": {
+    "mode": "gradient",
+    "solid_color": "#f4f8ff",
+    "gradient_start": "#f4f8ff",
+    "gradient_end": "#eaf2fd",
+    "overlay_color": "#ffffff",
+    "overlay_opacity": 0.35,
+    "image_name": "snow_liwa_bg.jpg",
+    "fixed": false
+  },
+  "hero": {
+    "image_name": "snow_liwa_bg.jpg",
+    "height": "medium"
+  },
+  "theme": {
+    "primary": "#123764",
+    "secondary": "#0d2a4f",
+    "card_bg": "#fdfdff",
+    "radius": "medium",
+    "shadow": "soft",
+    "mode": "light"
+  },
+  "typography": {
+    "heading_font": "Poppins, sans-serif",
+    "body_font": "Inter, sans-serif",
+    "arabic_font": "Tajawal, sans-serif",
+    "scale": "default",
+    "direction": "ltr",
+    "language_mode": "bilingual"
+  },
+  "content": {
+    "nav": {
+      "name": "NAME",
+      "about": "ABOUT",
+      "activities": "ACTIVITIES",
+      "invites": "INVYS",
+      "contact": "CONTACT"
+    },
+    "cards": {
+      "activities_title": "ACTIVITIES",
+      "activities_desc": "Snow play, warm drinks, chocolate fountain, and winter vibes for friends & family.",
+      "events_title": "EVENTS",
+      "events_desc": "Group bookings, private sessions, and curated winter moments at our secret Liwa spot.",
+      "contact_title": "CONTACT",
+      "contact_desc": "Reach us on WhatsApp or Instagram snowliwa. We'll share the exact location after booking."
+    },
+    "booking": {
+      "heading": "??? Book your ticket",
+      "price_text": "Entrance ticket: 175 AED per person.",
+      "pay_button": "Proceed to payment with Ziina",
+      "success_message": "? Booking created!"
+    }
+  },
+  "icons": {
+    "enabled": true,
+    "size": "medium",
+    "animation": "float"
+  },
+  "form": {
+    "show_notes": true,
+    "label_position": "top",
+    "button_width": "auto",
+    "show_ticket_icon": true,
+    "labels": {
+      "name": "Name / ????? ??????",
+      "phone": "Phone / ??? ?????? (??????)",
+      "tickets": "Number of tickets / ??? ???????",
+      "notes": "Notes (optional) / ??????? ????????"
+    }
+  }
+}
